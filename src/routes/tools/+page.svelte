@@ -15,10 +15,6 @@
           to help you get started.
         </p>
         <a href="{resolve('/BVHView/bvhview.html' as any)}" target="_blank" class="links">BVH View</a>
-        <!-- <p>
-          Whether you're a researcher or a developer, our mission is to make gesture evaluation
-          more open, transparent, and comparable across projects.
-        </p> -->
       </div>
 
       <div class="home-text card">
@@ -30,10 +26,6 @@
           to help you get started.
         </p>
         <a href="https://github.com/TeoNikolov/genea_visualizer/tree/dev-2025" target="_blank" class="links">Blender</a>
-        <!-- <p>
-          Whether you're a researcher or a developer, our mission is to make gesture evaluation
-          more open, transparent, and comparable across projects.
-        </p> -->
       </div>
     </div>
 
@@ -48,10 +40,6 @@
           to help you get started.
         </p>
         <a href="https://github.com/facebookresearch/TalkingWithHands32M" target="_blank" class="links">Talking with Hands</a>
-        <!-- <p>
-          Whether you're a researcher or a developer, our mission is to make gesture evaluation
-          more open, transparent, and comparable across projects.
-        </p> -->
       </div>
 
       <div class="home-text card">
@@ -63,10 +51,6 @@
           to help you get started.
         </p>
         <a href="https://smpl-x.is.tue.mpg.de/index.html" target="_blank" class="links">SMPL-X</a>
-        <!-- <p>
-          Whether you're a researcher or a developer, our mission is to make gesture evaluation
-          more open, transparent, and comparable across projects.
-        </p> -->
       </div>
 
       <div class="home-text card">
@@ -78,10 +62,6 @@
           to help you get started.
         </p>
         <a href="https://www.projectaria.com/datasets/nymeria/" target="_blank" class="links">Nymeria</a>
-        <!-- <p>
-          Whether you're a researcher or a developer, our mission is to make gesture evaluation
-          more open, transparent, and comparable across projects.
-        </p> -->
       </div>
     </div>
   </div>

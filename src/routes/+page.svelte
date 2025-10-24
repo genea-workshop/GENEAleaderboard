@@ -52,7 +52,7 @@
         <LeaderboardTable rows={rows.slice(0, 10)} columns={columnsToShow} showSearch={false} />
       </div>
       <a class="see-full" on:click={goToLeaderboard}>
-        See full leaderboard →
+        See expanded leaderboard →
       </a>
     </div>
   </div>

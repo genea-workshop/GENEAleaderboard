@@ -34,7 +34,7 @@
   <div class="leaderboard-table card">
     <h2 class="h2">Leaderboard</h2>
     <div class="leaderboard-wrapper">
-      <LeaderboardTable rows={rows} />
+      <LeaderboardTable rows={rows}/>
     </div>
   </div>
 

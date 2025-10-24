@@ -3,13 +3,26 @@
 
   export let rows: LeaderboardRow[] = [];
   export let limit: number | null = null;
-  export let columns: (keyof LeaderboardRow)[] = [
-    'rank', 'name', 'fgd', 'fd_g', 'fd_k', 'ba', 'srgr', 'div_pose', 'div_sample', 'paper_venue', 'elo_hl', 'mismatch'
+  // export let columns: (keyof LeaderboardRow)[] = [
+  //   'rank', 'name', 'fgd', 'fd_g', 'fd_k', 'ba', 'srgr', 'div_pose', 'div_sample', 'paper_venue', 'elo_hl', 'mismatch'
+  // ];
+
+  export let columnsA: (keyof LeaderboardRow)[] = [
+    'rank', 'name', 'fgd', 'fd_g', 'fd_k', 'ba', 'srgr'
   ];
+
+  export let columnsB: (keyof LeaderboardRow)[] = [
+    'rank', 'name', 'div_pose', 'div_sample', 'paper_venue', 'elo_hl', 'mismatch'
+  ];
+
   let sortKey: keyof LeaderboardRow | null = null;
   let ascending = true;
   let q = '';
   export let showSearch: boolean = true;
+
+  let showAlt = false;
+
+  $: columns = showAlt ? columnsB : columnsA;
 
   function sortBy(key: keyof LeaderboardRow) {
     if (sortKey === key) {
@@ -45,25 +58,41 @@
   $: displayedRows = limit ? sortedRows.slice(0, limit) : sortedRows;
 
   const columnInfo: Record<string, { label: string; tooltip: string }> = {
-  rank: { label: '#', tooltip: 'Ranking position' },
-  name: { label: 'Name', tooltip: 'Model or participant name' },
-  fgd: { label: 'FGD', tooltip: 'Frechet Gesture Distance' },
-  fd_g: { label: 'FD-G', tooltip: 'Frechet Distance (Gestures)' },
-  fd_k: { label: 'FD-K', tooltip: 'Frechet Distance (Keypoints)' },
-  ba: { label: 'BA', tooltip: 'Beat Alignment score' },
-  srgr: { label: 'SRGR', tooltip: 'Speech-to-Gesture Relevance' },
-  div_pose: { label: 'Div-P', tooltip: 'Pose Diversity' },
-  div_sample: { label: 'Div-S', tooltip: 'Sample Diversity' },
-  paper_venue: { label: 'Venue', tooltip: 'Publication venue' },
-  elo_hl: { label: 'Elo-HL', tooltip: 'Human-likeness score from Elo rating' },
-  mismatch: { label: 'MM', tooltip: 'Mismatch preference' }
-};
+    rank: { label: '#', tooltip: 'Ranking position' },
+    name: { label: 'Name', tooltip: 'Model or participant name' },
+    fgd: { label: 'FGD', tooltip: 'Frechet Gesture Distance' },
+    fd_g: { label: 'FD-G', tooltip: 'Frechet Distance (Gestures)' },
+    fd_k: { label: 'FD-K', tooltip: 'Frechet Distance (Keypoints)' },
+    ba: { label: 'BA', tooltip: 'Beat Alignment score' },
+    srgr: { label: 'SRGR', tooltip: 'Speech-to-Gesture Relevance' },
+    div_pose: { label: 'Div-P', tooltip: 'Pose Diversity' },
+    div_sample: { label: 'Div-S', tooltip: 'Sample Diversity' },
+    paper_venue: { label: 'Venue', tooltip: 'Publication venue' },
+    elo_hl: { label: 'Elo-HL', tooltip: 'Human-likeness score from Elo rating' },
+    mismatch: { label: 'MM', tooltip: 'Mismatch preference' }
+  };
 </script>
 
 {#if showSearch}
+  <div class="leaderboard-table-controls">
     <div class="leaderboard-table-search">
         <input class="leaderboard-search" placeholder="Search..." bind:value={q} />
     </div>
+    <div class="leaderboard-buttons">
+      <button
+        class:selected={!showAlt}
+        on:click={() => (showAlt = false)}
+      >
+        Leaderboard A
+      </button>
+      <button
+        class:selected={showAlt}
+        on:click={() => (showAlt = true)}
+      >
+        Leaderboard B
+      </button>
+    </div>
+  </div>
 {/if}
 <table class="leaderboard-table-inner">
 <thead>
@@ -81,10 +110,18 @@
     {#each displayedRows as row, i}
     <tr>
         {#each columns as col}
-        <td   
-            class:name={['id', 'model', 'team', 'submitted'].includes(col)}
-            class:score={['val_f1', 'val_mse'].includes(col)}
-        >{row[col]}</td>
+        <td
+          class:name={col === 'name'}
+        >
+          {#if col === 'name' && row.link}
+            <a href={row.link} target="_blank" rel="noopener noreferrer" class="leaderboard-name-link">
+              {row.name}
+            </a>
+          {:else}
+            {row[col]}
+          {/if}
+        </td>
+        <!-- <td>{row[col]}</td> -->
         {/each}
     </tr>
     {/each}

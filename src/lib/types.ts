@@ -21,6 +21,7 @@ export interface LeaderboardRow {
   paper_venue: string;
   elo_hl?: number;
   mismatch?: number;
+  link?: string;
 }
 
 export const PUBLIC_SUPABASE_URL = "https://ctwfyjhvheylawtxrvdq.supabase.co";

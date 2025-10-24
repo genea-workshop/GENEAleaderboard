@@ -25,58 +25,95 @@
         <div class="image-item">
           <img src="{resolve('/organizers/youngwoo.jpg' as any)}" alt="Image 1 description" />
           <div class="caption">
-            <h3 >Youngwoo Yoon</h3>
+            <h3><a href="https://youngwoo-yoon.github.io/" rel="external nofollow noopener" target="_blank">Youngwoo Yoon</a></h3>
             <p>Principal Researcher</p>
             <p>ETRI, South Korea</p>
           </div>
         </div>
         <div class="image-item">
           <img src="{resolve('/organizers/taras.jpg' as any)}" alt="Image 2 description" />
-          <p class="caption">Image 2 caption</p>
+          <div class="caption">
+            <h3><a href="https://svito-zar.github.io/" rel="external nofollow noopener" target="_blank">Taras Kucherenko</a></h3>
+            <p>Research Scientist</p>
+            <p>Electronic Arts - SEED, Sweden</p>
+          </div>
         </div>
         <div class="image-item">
           <img src="{resolve('/organizers/gustav.jpeg' as any)}" alt="Image 3 description" />
-          <p class="caption">Youngwoo Yoon</p>
-          <p>Principal Researcher</p>
-          <p>ETRI, South Korea</p>
+          <div class="caption">
+            <h3><a href="https://people.kth.se/~ghe/" rel="external nofollow noopener" target="_blank">Gustav Eje Henter</a></h3>
+            <p>Assistant Professor</p>
+            <p>KTH Royal Institute of Technology</p>
+            <p>Head of Research motorica.ai, Sweden</p>
+          </div>
         </div>
         <div class="image-item">
           <img src="{resolve('/organizers/rajmund.png' as any)}" alt="Image 4 description" />
-          <p class="caption">Image 4 caption</p>
+          <div class="caption">
+            <h3><a href="https://nagyrajmund.github.io/" rel="external nofollow noopener" target="_blank">Rajmund Nagy</a></h3>
+            <p>Doctoral Student</p>
+            <p>KTH Royal Institute of Technology</p>
+            <p>Sweden</p>
+          </div>
         </div>
         <div class="image-item">
           <img src="{resolve('/organizers/hendric.jpg' as any)}" alt="Image 5 description" />
-          <p class="caption">Image 5 caption</p>
+          <div class="caption">
+            <h3><a href="https://techfak.uni-bielefeld.de/~hvoss/" rel="external nofollow noopener" target="_blank">Hendric Voß</a></h3>
+            <p>Doctoral Student</p>
+            <p>Bielefeld University, Germany</p>
+          </div>
         </div>
         <div class="image-item">
           <img src="{resolve('/organizers/thanh.png' as any)}" alt="Image 6 description" />
-          <p class="caption">Image 6 caption</p>
+          <div class="caption">
+            <h3><a href="https://hmthanh.github.io/" rel="external nofollow noopener" target="_blank">Thanh Hoang-Minh</a></h3>
+            <p>MSc Student</p>
+            <p>VNUHCM - University of Science, Vietnam</p>
+          </div>
         </div>
         <div class="image-item">
           <img src="{resolve('/organizers/teodor.jpeg' as any)}" alt="Image 7 description" />
-          <p class="caption">Image 7 caption</p>
+          <div class="caption">
+            <h3><a href="https://www.teonikolov.com/" rel="external nofollow noopener" target="_blank">Teodor Nikolov</a></h3>
+            <p>Research Engineer</p>
+            <p>motorica.ai, Sweden</p>
+          </div>
         </div>
         <div class="image-item">
           <img src="{resolve('/organizers/mihail.png' as any)}" alt="Image 8 description" />
-          <p class="caption">Image 8 caption</p>
+          <div class="caption">
+            <h3><a href="https://www.linkedin.com/in/mihailtsakov/" rel="external nofollow noopener" target="_blank">Mihail Tsakov</a></h3>
+            <p>Unreal Engine Developer</p>
+            <p>Liahim, Netherlands</p>
+          </div>
         </div>
       </div>
     </div>
     <div class="home-text card">
       <h1 class="h1">Scientific advisors</h1>
       <p>While the organising team handles day-to-day operations, we are fortunate to be advised in key strategic decisions and the leaderboard methodology by three leading experts of nonverbal communication, visual perception, human-agent interaction, and motion capture:</p>
-      <div class="image-grid">
+      <div class="image-grid2">
         <div class="image-item">
           <img src="{resolve('/organizers/rachel.jpg' as any)}" alt="Image 1 description" />
-          <p class="caption">Image 1 caption</p>
+          <div class="caption">
+            <h3><a href="https://www.scss.tcd.ie/rachel.mcdonnell/" rel="external nofollow noopener" target="_blank">Rachel McDonnell</a></h3>
+            <p>Trinity College Dublin, Ireland</p>
+          </div>
         </div>
         <div class="image-item">
           <img src="{resolve('/organizers/michael.jpg' as any)}" alt="Image 2 description" />
-          <p class="caption">Image 2 caption</p>
+          <div class="caption">
+            <h3><a href="https://www.cs.ucdavis.edu/~neff/" rel="external nofollow noopener" target="_blank">Michael Neff</a></h3>
+            <p>University of California, Davis, USA</p>
+          </div>
         </div>
         <div class="image-item">
           <img src="{resolve('/organizers/stefan.jpeg' as any)}" alt="Image 3 description" />
-          <p class="caption">Image 3 caption</p>
+          <div class="caption">
+            <h3><a href="https://www.techfak.uni-bielefeld.de/~skopp/" rel="external nofollow noopener" target="_blank">Stefan Kopp</a></h3>
+            <p>Bielefeld University, Germany</p>
+          </div>
         </div>
       </div>
     </div>
