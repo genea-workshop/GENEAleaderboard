@@ -1,0 +1,20 @@
+/* Main section container */
+.container {
+  display: flex;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  justify-content: center;
+  position: static;
+  overflow-y: visible;
+  background: var(--bg);
+}
+
+/* Sub section container */
+.subcontainer {
+  display: block;
+  max-width: var(--nav-max-width);
+  margin: 0 auto;
+  min-height: calc(100vh - var(--nav-height));
+  align-items:  center;
+  justify-content: center;
+}

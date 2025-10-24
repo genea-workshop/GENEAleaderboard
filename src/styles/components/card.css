@@ -1,0 +1,11 @@
+.card {
+  background: var(--table-bg);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--table-outline);
+
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 100%;
+}
