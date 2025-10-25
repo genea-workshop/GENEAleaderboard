@@ -21,6 +21,7 @@
       --left-width: 0.5fr;
       --right-width: 1.5fr;
     }
+
     body {
       font-family: arial;
       margin: 0;
@@ -195,24 +196,50 @@
   <div class="container">
     <div class="subcontainer">
       <div class="text">
-        <p><strong>BVHView Instructions</strong></p>
-        <p>How to use with <strong>SMPLX</strong>:</p>
-        <ul>
-          <li>Download the <strong>SMPLX</strong> .fbx meshes from <a href="https://smpl-x.is.tue.mpg.de/">https://smpl-x.is.tue.mpg.de/</a></li>
-          <li>Follow these instructions to convert the <strong>FBX</strong> mesh to <strong>GLTF</strong>: 
-            <a href="https://github.com/TeoNikolov/BVHView?tab=readme-ov-file#custom-meshes">https://github.com/TeoNikolov/BVHView?tab=readme-ov-file#custom-meshes</a></li>
-          <li>Drag-drop the .bin, .gltf, .png files into BVHView</li>
-          <li>Wait until the mesh has loaded (a character will appear)</li>
-          <li>Drag-drop a .bvh file</li>
-          <li>Turn off "Draw Capsules"</li>
-          <li>To load new .bvh files, press "Clear" on the left, then drag-drop your new .bvh</li>
-        </ul>
-          <p>Convert <strong>BEAT2</strong> .npz to .bvh:</p>
-        <ul>
-          <li>Setup smpl2bvh from this fork: <a href="https://github.com/GENEALeaderboard/smpl2bvh">https://github.com/GENEALeaderboard/smpl2bvh</a></li>
-          <li>Use command *python smpl2bvh.py --gender NEUTRAL --poses "[...]/1_wayne_0_2_2.npz" --output "[...]/output.bvh"*</li>
-          <li>Drag-drop .bvh into BVHView. Make sure to use the same SMPL-X mesh as the one in the previous step</li>
-        </ul>
+        <h1>Instructions</h1>
+        <h2>1. Prepare SMPL-X mesh</h2>
+        <ol>
+          <li>Visit <a href="https://smpl-x.is.tue.mpg.de/" target="_blank">https://smpl-x.is.tue.mpg.de/</a>, register,
+            and log in</li>
+          <li>Open <a href="https://smpl-x.is.tue.mpg.de/download.php" target="_blank">Download</a></li>
+          <li>Download the latest <strong>SMPL-X Blender Add-on</strong></li>
+          <li>Open <strong>Blender</strong></li>
+          <li>In <em>Edit > Preferences > Add-ons > top-right arrow > Install from disk...</em> and select the add-on
+            file</li>
+          <li>Click <em>File > New > General</em></li>
+          <li>Delete all objects in scene</li>
+          <li>Open the right panel and select <em>SMPL-X</em></li>
+          <li>Choose <em>Neutral</em> model and press <em>Add</em></li>
+          <li>Export as glTF
+            <ul>
+              <li>Click <em>File > Export > glTF 2.0</em></li>
+              <li><em>Operator Presets > Restore Operator Defaults</em></li>
+              <li>Set <em>Format > glTF Separate</em></li>
+              <li>Enable <em>Data > Armature > Add Leaf Bones</em>, disable <em>Animation</em></li>
+              <li>Name it (e.g. mesh.gltf) > click <em>Export glTF 2.0</em></li>
+            </ul>
+          </li>
+          <li>Close Blender</li>
+        </ol>
+
+        <h2>2. Convert BEAT2 .npz to .bvh</h2>
+        <ol>
+          <li>Setup <a href="https://github.com/GENEALeaderboard/smpl2bvh" target="_blank">GENEALeaderboard/smpl2bvh</a>
+          </li>
+          <li><code>python smpl2bvh.py --gender NEUTRAL --poses "[...]/1_wayne_0_2_2.npz" --output
+              "[...]/output.bvh"</code>
+          </li>
+        </ol>
+
+        <h2>3. Visualize BEAT2 data</h2>
+        <ol>
+          <li>Drag-drop mesh <strong>.bin</strong> and <strong>.gltf</strong> into BVHView
+          </li>
+          <li>After mesh loads, drag-drop the <strong>.bvh</strong> file</li>
+          <li>Disable <em>Draw Capsules</em></li>
+          <br>
+          Note: To load a new <strong>.bvh</strong>, click <em>Clear</em>, then drag-drop again.</li>
+        </ol>
       </div>
       <div>
         <div id="header">
