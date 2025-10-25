@@ -8,11 +8,11 @@
   // ];
 
   export let columnsA: (keyof LeaderboardRow)[] = [
-    'rank', 'name', 'fgd', 'fd_g', 'fd_k', 'ba', 'srgr'
+    'rank', 'name', 'elo_hl', 'mismatch'
   ];
 
   export let columnsB: (keyof LeaderboardRow)[] = [
-    'rank', 'name', 'div_pose', 'div_sample', 'paper_venue', 'elo_hl', 'mismatch'
+    'rank', 'name', 'fgd', 'ba', 'srgr', 'div_pose', 'div_sample'
   ];
 
   let sortKey: keyof LeaderboardRow | null = null;
@@ -83,13 +83,13 @@
         class:selected={!showAlt}
         on:click={() => (showAlt = false)}
       >
-        Leaderboard A
+        Subjective
       </button>
       <button
         class:selected={showAlt}
         on:click={() => (showAlt = true)}
       >
-        Leaderboard B
+        Objective
       </button>
     </div>
   </div>

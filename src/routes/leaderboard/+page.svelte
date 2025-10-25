@@ -5,6 +5,7 @@
   import { PUBLIC_SUPABASE_ANON_KEY, type LeaderboardRow } from '$lib/types';
 
   let rows: LeaderboardRow[] = [];
+  let loading = true;
 
   onMount(async () => {
     try {
@@ -24,6 +25,8 @@
       }));
     } catch (err) {
       console.error('Failed to fetch leaderboard:', err);
+    } finally {
+      loading = false;
     }
   });
 </script>
@@ -34,7 +37,14 @@
   <div class="leaderboard-table card">
     <h2 class="h2">Leaderboard</h2>
     <div class="leaderboard-wrapper">
-      <LeaderboardTable rows={rows}/>
+      {#if loading}
+        <div class="loading-container">
+          <div class="spinner"></div>
+          <p>Loading leaderboard...</p>
+        </div>
+      {:else}
+        <LeaderboardTable rows={rows}/>
+      {/if}
     </div>
   </div>
 

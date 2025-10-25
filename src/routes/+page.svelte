@@ -6,7 +6,7 @@
   import { PUBLIC_SUPABASE_ANON_KEY, type LeaderboardRow } from '$lib/types';
 
   let rows: LeaderboardRow[] = [];
-  const columnsToShow: (keyof LeaderboardRow)[] = ['rank', 'name', 'paper_venue', 'elo_hl', 'fgd'];
+  let loading = true;
 
   onMount(async () => {
     try {
@@ -21,6 +21,8 @@
       rows = json.data ?? [];
     } catch (err) {
       console.error('Failed to fetch leaderboard:', err);
+    } finally {
+      loading = false;
     }
   });
 
@@ -49,7 +51,14 @@
     <div class="leaderboard-preview card">
       <h2 class="h2">Top 10 Leaderboard</h2>
       <div class="leaderboard-wrapper">
-        <LeaderboardTable rows={rows.slice(0, 10)} columns={columnsToShow} showSearch={false} />
+        {#if loading}
+          <div class="loading-container">
+            <div class="spinner"></div>
+            <p>Loading leaderboard...</p>
+          </div>
+        {:else}
+          <LeaderboardTable rows={rows.slice(0, 10)} showSearch={false} />
+        {/if}
       </div>
       <a class="see-full" on:click={goToLeaderboard}>
         See expanded leaderboard →
