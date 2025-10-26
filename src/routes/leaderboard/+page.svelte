@@ -34,29 +34,29 @@
 
 <main class="subcontainer">
   <div class="home-split-ver">
-  <div class="leaderboard-table card">
-    <h2 class="h2">Leaderboard</h2>
-    <div class="leaderboard-wrapper">
-      {#if loading}
-        <div class="loading-container">
-          <div class="spinner"></div>
-          <p>Loading leaderboard...</p>
-        </div>
-      {:else}
-        <LeaderboardTable rows={rows}/>
-      {/if}
+    <div class="leaderboard-table card">
+      <h1 class="h1">Leaderboard</h1>
+      <div class="leaderboard-wrapper">
+        {#if loading}
+          <div class="loading-container">
+            <div class="spinner"></div>
+            <p>Loading leaderboard...</p>
+          </div>
+        {:else}
+          <LeaderboardTable rows={rows}/>
+        {/if}
+      </div>
+    </div>
+
+    <div class="image-gallery card">
+      <img
+        src="{resolve('/motion_realism_elo_results.jpg' as any)}"
+        alt="Motion realism results"
+      >
+      <img
+        src="{resolve('/mismatching_pref_results_split_ties.jpg' as any)}"
+        alt="Mismatching preference results"
+      >
     </div>
   </div>
-
-  <div class="image-gallery card">
-    <img
-      src="{resolve('/motion_realism_elo_results.jpg' as any)}"
-      alt="Motion realism results"
-    >
-    <img
-      src="{resolve('/mismatching_pref_results_split_ties.jpg' as any)}"
-      alt="Mismatching preference results"
-    >
-  </div>
-</div>
 </main>
