@@ -83,6 +83,10 @@
   visibility: visible;
 }
 
+.leaderboard-header-text:hover {
+  cursor: pointer;
+}
+
 /* Table outer thin border */
 .leaderboard-wrapper {
   border-radius: 10px;
