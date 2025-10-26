@@ -17,6 +17,19 @@
       document.body.classList.contains('dark') ? 'dark' : 'light'
     );
   }
+
+  if (typeof window !== 'undefined') {
+    window.addEventListener('scroll', () => {
+      const scrollProgress = document.querySelector('.scroll-progress') as HTMLElement | null;
+      if (!scrollProgress) return;
+
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (scrollTop / docHeight) * 100;
+
+      scrollProgress.style.width = `${scrolled}%`;
+    });
+  }
 </script>
 
 <svelte:head>
@@ -85,6 +98,7 @@
     </div>
 
   </nav>
+  <div class="scroll-progress"></div>
 </div>
 
 <main class="container">

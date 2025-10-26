@@ -351,7 +351,7 @@ iframe {
 
 .leaderboard-buttons button.selected {
   background: var(--primary);
-  color: #442424;
+  color: #3284ff;
   border-color: var(--primary);
 }
 
@@ -363,7 +363,7 @@ iframe {
 }
 
 .leaderboard-name-link:hover {
-  color: var(--btn-hover-text);
+  color: var(--btn-hover-bg);
   text-decoration: underline;
 }
 
@@ -372,7 +372,7 @@ iframe {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 400px; /* ✅ reserve space to prevent jumps */
+  min-height: 400px;
   color: var(--muted);
   font-size: 0.95rem;
 }

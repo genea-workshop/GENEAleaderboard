@@ -4,7 +4,8 @@
   --bg: #ffffff;
   --page-bg: #f7f8fb;
   --nav-bg: #f9f9f9;
-  --nav-height: 128px;
+  --navbar-height: 48px;
+  --nav-height: 96px;
   --nav-max-width: 1400px;
   --nav-contrast: #343946;
   --muted: #595f6b;
